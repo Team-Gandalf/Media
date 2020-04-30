@@ -4,6 +4,8 @@ const path = require('path');
 const parser = require('body-parser');
 const port = 8000;
 
+app.use(express.static(path.join(__dirname, '../public')))
+
 app.get('/media', (req, res) => {
   console.log('get request works!')
   res.send('get request works!')
