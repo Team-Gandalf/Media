@@ -21,3 +21,26 @@ let gameSchema = new mongoose.Schema({
 });
 
 let Game = mongoose.model('Game', gameSchema);
+
+module.exports.addNewGame = (game, cb) => {
+	let newGame = new Game(game);
+	newGame.save((err, newGame) => {
+		if(err) {
+			cb(err);
+		} else {
+			cb(null, newGame);
+		}
+	})
+};
+
+module.exports.getGame = (id, cb) => {
+	console.log('made it to database!')
+	Game.find({_id: `${id}`}, (err, data) => {
+		if (err) {
+			cb(err);
+		} else {
+			cb(null, data);
+		}
+	})
+};
+
