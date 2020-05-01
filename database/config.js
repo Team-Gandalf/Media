@@ -1,46 +1,47 @@
 const mongoose = require('mongoose');
-let db = mongoose.connection;
 
-mongoose.connect('mongodb://localhost/mediaDb', {useNewUrlParser: true});
+const db = mongoose.connection;
+
+mongoose.connect('mongodb://localhost/mediaDb', { useNewUrlParser: true });
 
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+db.once('open', () => {
   console.log('connected to db');
 });
 
-let gameSchema = new mongoose.Schema({
-  video: Array,
-	images: Array,
-	splash: String,
-	description: String,
-	reviews: String,
-	releaseDate: String,
-	developer: String,
-	publisher: String,
-	tags: Array,
+const gameSchema = new mongoose.Schema({
+  title: String,
+  video: [String],
+  images: [String],
+  splash: String,
+  description: String,
+  reviews: { general: String, total: Number },
+  releaseDate: String,
+  developer: String,
+  publisher: String,
+  tags: [String],
 });
 
-let Game = mongoose.model('Game', gameSchema);
+const Game = mongoose.model('Game', gameSchema);
 
 module.exports.addNewGame = (game, cb) => {
-	let newGame = new Game(game);
-	newGame.save((err, newGame) => {
-		if(err) {
-			cb(err);
-		} else {
-			cb(null, newGame);
-		}
-	})
+  const newGame = new Game(game);
+  newGame.save((err, newGame) => {
+    if (err) {
+      cb(err);
+    } else {
+      cb(null, newGame);
+    }
+  });
 };
 
 module.exports.getGame = (id, cb) => {
-	console.log('made it to database!')
-	Game.find({_id: `${id}`}, (err, data) => {
-		if (err) {
-			cb(err);
-		} else {
-			cb(null, data);
-		}
-	})
+  console.log('made it to database!');
+  Game.find({ _id: `${id}` }, (err, data) => {
+    if (err) {
+      cb(err);
+    } else {
+      cb(null, data);
+    }
+  });
 };
-
