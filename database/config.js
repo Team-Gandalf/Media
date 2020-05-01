@@ -35,9 +35,8 @@ module.exports.addNewGame = (game, cb) => {
   });
 };
 
-module.exports.getGame = (id, cb) => {
-  console.log('made it to database!');
-  Game.find({ _id: `${id}` }, (err, data) => {
+module.exports.getGame = (game, cb) => {
+  Game.find({ title: game.title }, (err, data) => {
     if (err) {
       cb(err);
     } else {
