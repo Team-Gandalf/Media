@@ -7,11 +7,7 @@ class CarouselSlide extends React.Component {
     this.state = {
 
     };
-    // const inlineStyle = {
-    //   backgroundImage: `url(${url})`,
-    //   backgroundSize: 'cover',
-    //   backgroundPosition: 'center'
-    // }
+
   }
 
   render() {
