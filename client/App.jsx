@@ -34,7 +34,6 @@ class App extends React.Component {
       }
     })
       .then((result) => {
-        //console.log(result.data[0], '--------------')
         this.setState({
           game: result.data[0]
         })
@@ -42,14 +41,15 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.game.summary, '++++++++++++++++++')
     return (
       <div>
-        <h3>All Games > Action Games > GAME.TITLE</h3>
-        <h1>GAME.TITLE</h1>
+        <h3 className='filePath'> <a href=''>All Games</a> > <a href=''>Action Games</a> > <a href=''>{this.state.game.summary.title}</a></h3>
+        <h1 className='title'>{this.state.game.summary.title}</h1>
         <button className='button'>Community Hub</button>
-        <Carousel />
-        <Summary details={this.state.game.summary}/>
+        <div className='media'>
+          <Carousel />
+          <Summary details={this.state.game.summary}/>
+        </div>
       </div>
     );
   }
