@@ -10,16 +10,20 @@ db.once('open', () => {
 });
 
 const gameSchema = new mongoose.Schema({
-  title: String,
-  video: [String],
-  images: [String],
-  splash: String,
-  description: String,
-  reviews: { general: String, total: Number },
-  releaseDate: String,
-  developer: String,
-  publisher: String,
-  tags: [String],
+	summary: {
+		title: String,
+		splash: String,
+		description: String,
+		reviews: { general: String, total: Number },
+		releaseDate: String,
+		developer: String,
+		publisher: String,
+		tags: [String],
+	},
+	media: {
+		video: [String],
+  	images: [String],
+	},
 });
 
 const Game = mongoose.model('Game', gameSchema);
