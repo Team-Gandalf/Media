@@ -26,16 +26,20 @@ const seeder = () => {
     }
 
     const data = {
-      title: faker.commerce.productName(),
-      video: vids,
-      images: pics,
-      splash: faker.image.abstract(),
-      description: faker.lorem.paragraph(),
-      reviews: { general: options[Math.floor(Math.random() * 9)], total: faker.random.number() },
-      releaseDate: faker.date.past(),
-      developer: faker.company.companyName(),
-      publisher: faker.company.companyName(),
-      tags: tagList,
+      summary: {
+        title: faker.commerce.productName(),
+        splash: faker.image.abstract(),
+        description: faker.lorem.paragraph(),
+        reviews: { general: options[Math.floor(Math.random() * 9)], total: faker.random.number() },
+        releaseDate: faker.date.past(),
+        developer: faker.company.companyName(),
+        publisher: faker.company.companyName(),
+        tags: tagList,
+      },
+      media: {
+        video: vids,
+        images: pics,
+      },
     };
     db.addNewGame(data, (err, data) => {
       if (err) {
