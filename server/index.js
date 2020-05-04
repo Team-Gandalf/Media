@@ -10,7 +10,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(parser.json());
 
 app.get('/media', (req, res) => {
-  const game = req.body;
+  console.log(req.query)
+  const game = req.query;
   const callback = (err, data) => {
     if (err) {
       res.status(404).json(err);

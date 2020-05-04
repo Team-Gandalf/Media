@@ -40,7 +40,7 @@ module.exports.addNewGame = (game, cb) => {
 };
 
 module.exports.getGame = (game, cb) => {
-  Game.find({ title: game.title }, (err, data) => {
+  Game.find({ _id: game._id }, (err, data) => {
     if (err) {
       cb(err);
     } else {

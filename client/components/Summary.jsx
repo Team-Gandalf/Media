@@ -11,17 +11,18 @@ class Summary extends React.Component {
   }
 
   render() {
+    {console.log(this.props.details, '!!!!!!!!!!!!!!!')}
     return (
       <div>
-        <div>GAME.SPLASH</div>
-        <p>GAME.DESCRIPTION</p>
+        <div><img src={this.props.details.splash} alt='Game Splash'></img></div>
+        <p>{this.props.details.description}</p>
         <p>
-          ALL REVIEWS:  <span className='blerb'>GAME.REVIEWS.GENERAL</span>
-           <span className='reviewCount'>GAME.REVIEWS.TOTAL</span>
+          ALL REVIEWS:  <span className='blerb'>{this.props.details.reviews.general}</span>
+           <span className='reviewCount'>{this.props.details.reviews.total}</span>
         </p>
-        <p>RELEASE DATE: <span className ='releaseDate'>GAME.RELEASEDATE</span></p>
-        <p>DEVELOPER: <span className='blerb'>GAME.DEVELOPER</span></p>
-        <p>Publisher: <span className='blerb'>GAME.PUBLISHER</span></p>
+        <p>RELEASE DATE: <span className ='releaseDate'>{this.props.details.releaseDate}</span></p>
+        <p>DEVELOPER: <span className='blerb'>{this.props.details.developer}</span></p>
+        <p>Publisher: <span className='blerb'>{this.props.details.publisher}</span></p>
         <Tags />
       </div>
     );
