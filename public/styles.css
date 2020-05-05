@@ -9,6 +9,41 @@ body {
   color: white;
   font-family: sans-serif;
   font-weight: normal;
+  background-image: url('./TempAssets/background.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.titleArea {
+  width: 940px;
+  margin: 0 auto;
+  padding-bottom: 16px;
+}
+
+.grid1 {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.highlights {
+  width: 940px;
+  background-color: rgba(27, 40, 56, 0.4)
+}
+
+.grid2 {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 600px 324px;
+  align-items: center;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 
 .filePath {
@@ -16,6 +51,7 @@ body {
   font-size: 12px;
   font-family: sans-serif;
   font-weight: normal;
+  padding-bottom: 4px;
 }
 
 .filePath a {
@@ -54,11 +90,6 @@ body {
 .media {
   display: inline-grid;
 }
-
-/* .splash {
-  width: 324px;
-  height: 151px;
-} */
 
 .description {
   max-height: 111px;
@@ -104,4 +135,13 @@ body {
   line-height: 19px;
   font-size: 12px;
   color: #556772;
+}
+
+img {
+  width: 324px;
+  height: 151px;
+}
+
+ul {
+  list-style-type: none;
 }
