@@ -87,6 +87,31 @@ body {
   background-image: linear-gradient(to right, #67c1f5, #4a6997);
 }
 
+.tag {
+  border-radius: 2px;
+  display: inline;
+  background-color: #31496d;
+  color: #67c1f5;
+  margin-right: 2px;
+  margin-bottom: 3px;
+  font-size: 15px;
+  line-height: 19px;
+  padding: 0 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag:hover {
+  color: white;
+  background-image: linear-gradient(to right, #67c1f5, #4a6997);
+}
+
+.listItem {
+  display: inline;
+}
+
 .media {
   display: inline-grid;
 }
@@ -114,6 +139,10 @@ body {
   font-size: 12px;
 }
 
+.blerb:hover {
+  color: white;
+}
+
 .reviewValue {
   color: #66C0F4;
   cursor: pointer;
@@ -128,6 +157,7 @@ body {
   font-size: 12px;
   line-height: 16px;
   color: #8f98a0;
+  padding-top: 12px;
 }
 
 .tagHeader {
@@ -144,4 +174,16 @@ img {
 
 ul {
   list-style-type: none;
+}
+
+.summaryTopPad {
+  padding-top: 14px
+}
+
+.devCol {
+  padding-top: 10px;
+}
+
+.publisherCol {
+  padding-top: 4px;
 }

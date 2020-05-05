@@ -10,10 +10,15 @@ class Tags extends React.Component {
   }
 
   render() {
+    let tags = this.props.tagList
+    console.log(tags)
     return (
       <div>
         <ul className='tagList'>
-          <li><button>Will be mapped dynamically from GAMES.TAGS</button></li>
+          {tags.map((tag) => {
+            return <li className='listItem'><button className='tag'>{tag}</button></li>
+          })}
+          <li className='listItem'><button className='tag'> + </button></li>
         </ul>
       </div>
     );

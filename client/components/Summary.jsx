@@ -17,31 +17,32 @@ class Summary extends React.Component {
     let month = dateObject.getMonth();
     let year = dateObject.getFullYear();
     let dateString = months[month] + " " + date + ", " + year;
+    let {details} = this.props;
 
     return (
       <div className='summary'>
-        <div className='splash'><img src={this.props.details.splash} alt='Game Splash'></img></div>
-        <p className='description'>{this.props.details.description}</p>
+        <div className='splash'><img src={details.splash} alt='Game Splash'></img></div>
+        <p className='description'>{details.description}</p>
         <div className='grid3'>
-          <span>
+          <span className='summaryTopPad'>
             <p className='header'>
               ALL REVIEWS:
             </p>
           </span>
-          <span className='reviewValue'>
-            {this.props.details.reviews.general} <span className='reviewCount'> ({this.props.details.reviews.total})</span>
+          <span className='reviewValue summaryTopPad'>
+            {details.reviews.general} <span className='reviewCount'> ({details.reviews.total})</span>
           </span>
-          <span>
+          <span className='summaryTopPad'>
             <p className='header'>RELEASE DATE: </p>
           </span>
           <span className ='releaseDate'>{dateString}</span>
-          <span><p className='header'>DEVELOPER: </p></span>
-          <span><a className='blerb'>{this.props.details.developer}</a></span>
-          <span><p className='header'>PUBLISHER: </p></span>
-          <span><a className='blerb'>{this.props.details.publisher}</a></span>
+          <span className='summaryTopPad'><p className='header'>DEVELOPER: </p></span>
+          <span className='devCol'><a className='blerb'>{details.developer}</a></span>
+          <span className='publisherCol'><p className='header'>PUBLISHER: </p></span>
+          <span><a className='blerb'>{details.publisher}</a></span>
         </div>
         <p className='tagHeader'>Popular user-defined tags for this product:</p>
-        <Tags />
+        <Tags tagList={details.tags}/>
       </div>
     );
   }
