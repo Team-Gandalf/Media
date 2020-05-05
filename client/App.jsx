@@ -41,14 +41,24 @@ class App extends React.Component {
   }
 
   render() {
+    const {game} = this.state;
+    const {title} = game.summary;
     return (
-      <div>
-        <h3 className='filePath'> <a href=''>All Games</a> > <a href=''>Action Games</a> > <a href=''>{this.state.game.summary.title}</a></h3>
-        <h1 className='title'>{this.state.game.summary.title}</h1>
-        <button className='button'>Community Hub</button>
-        <div className='media'>
-          <Carousel />
-          <Summary details={this.state.game.summary}/>
+      <div className='media'>
+        <div className='titleArea'>
+          <h3 className='filePath'> <a href=''>All Games</a> > <a href=''>Action Games</a> > <a href=''>{title}</a></h3>
+          <h1 className='title'>{title}</h1>
+          <button className='button'>Community Hub</button>
+        </div>
+        <div className='grid1'>
+          <span></span>
+          <div className='highlights'>
+            <div className='grid2'>
+              <span><Carousel /></span>
+              <span><Summary details={game.summary}/></span>
+            </div>
+          </div>
+          <span></span>
         </div>
       </div>
     );
