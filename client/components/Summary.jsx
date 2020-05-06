@@ -31,7 +31,7 @@ class Summary extends React.Component {
 
     return (
       <div className='summary'>
-        <div className='splash'><img src={details.splash} alt='Game Splash' height='151' width='324'></img></div>
+        <div className='splashContainer'><img src={details.splash} alt='Game Splash' className='splash' ></img></div>
         <p className='description'>{details.description}</p>
         {this.state.hover === true && (
           <span className='overlay'><p className='reviewStats'>{Math.ceil(Math.random() * 100)}% of the {details.reviews.total} user reviews for this game are negative.</p></span>

@@ -15,40 +15,14 @@ body {
   background-size: cover;
 }
 
-.summary {
-  position: relative;
-  margin-left: 15px;
+ul {
+  list-style-type: none;
 }
 
 .titleArea {
   width: 940px;
   margin: 0 auto;
   padding-bottom: 16px;
-}
-
-.grid1 {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-}
-
-.highlights {
-  width: 940px;
-  background-color: rgba(27, 40, 56, 0.4)
-}
-
-.grid2 {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 600px 324px;
-  align-items: center;
-}
-
-.grid3 {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 2fr;
 }
 
 .filePath {
@@ -92,6 +66,36 @@ body {
   background-image: linear-gradient(to right, #67c1f5, #4a6997);
 }
 
+.grid1 {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.highlights {
+  width: 940px;
+  background-color: rgba(27, 40, 56, 0.4)
+}
+
+.summary {
+  position: relative;
+  margin-left: 15px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 600px 324px;
+  align-items: center;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
+}
+
 .tag {
   border-radius: 2px;
   display: inline;
@@ -119,6 +123,18 @@ body {
 
 .media {
   display: inline-grid;
+}
+
+.splashContainer {
+  height: 151px;
+  width: 324px;
+  display: flex;
+}
+
+.splash {
+  object-fit: cover;
+  height: auto;
+  max-width: 100%;
 }
 
 .description {
@@ -173,10 +189,6 @@ body {
   color: #556772;
 }
 
-ul {
-  list-style-type: none;
-}
-
 .summaryTopPad {
   padding-top: 14px
 }
@@ -211,14 +223,32 @@ ul {
   width: 300px;
 }
 
+.thumbnailContainer {
+  height: 65px;
+  width: 115px;
+  display: flex;
+}
+
+.CarouselSlide {
+  height: 337px;
+  width: 600px;
+  display: flex;
+}
+
 .thumbnail {
   display: inline;
+  object-fit: cover;
+  height: auto;
+  max-width: 98%;
   margin: 4px;
 }
 
 .currentView {
   position: relative;
   top: 0px;
+  object-fit: cover;
+  height: auto;
+  max-width: 100%;
 }
 
 .slides {
@@ -243,7 +273,6 @@ ul {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #3d6c8d, #2e5470)
-
 }
 
 /* ::-webkit-scrollbar-button {
