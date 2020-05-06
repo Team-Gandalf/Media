@@ -17,6 +17,7 @@ body {
 
 .summary {
   position: relative;
+  margin-left: 15px;
 }
 
 .titleArea {
@@ -174,11 +175,6 @@ body {
   color: #556772;
 }
 
-img {
-  width: 324px;
-  height: 151px;
-}
-
 ul {
   list-style-type: none;
 }
@@ -204,8 +200,8 @@ ul {
   color: rgb(51, 51, 51);
   z-index: 1;
   position: absolute;
-  right: 5px;
-  top: 207px;
+  right: -10px;
+  top: 225px;
   border: 1px black solid;
   border-radius: 3px;
   background-color: rgb(161, 162, 163);
@@ -215,4 +211,40 @@ ul {
 
 .reviewStats {
   width: 300px;
+}
+
+.thumbnail {
+  display: inline;
+  margin: 4px;
+}
+
+.currentView {
+  position: relative;
+  top: 0px;
+}
+
+.slides {
+  overflow: scroll;
+  display: inline-flex;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1B2838;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-button {
+  background: red;
 }

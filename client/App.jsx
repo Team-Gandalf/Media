@@ -54,7 +54,7 @@ class App extends React.Component {
           <span></span>
           <div className='highlights'>
             <div className='grid2'>
-              <span><Carousel /></span>
+              <span><Carousel media={game.media}/></span>
               <span><Summary details={game.summary}/></span>
             </div>
           </div>

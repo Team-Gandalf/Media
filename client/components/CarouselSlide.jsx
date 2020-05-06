@@ -13,7 +13,7 @@ class CarouselSlide extends React.Component {
   render() {
     return (
       <div className='CarouselSlide' style={this.inlineStyle}>
-        <h1>Carousel Slide Mounted!</h1>
+        <img src={this.props.selected} height='337' width='600' className='currentView' />
       </div>
     );
   }
