@@ -22,10 +22,18 @@ class Carousel extends React.Component {
         <CarouselSlide selected={this.props.media.images[0]} />
         <ul className='slides'>
         {this.props.media.video.map((video) => {
-            return <li className ='thumbnail' ><video width='115' height='65'><source src={video} type="video/webm"></source></video></li>
+            return <li >
+              <div className='thumbnailContainer'>
+                <video className ='thumbnail'><source src={video}></source></video>
+              </div>
+            </li>
           })}
           {this.props.media.images.map((image) => {
-            return <li className ='thumbnail' ><img src={image} width='115' height='65'></img></li>
+            return <li>
+              <div className='thumbnailContainer'>
+                <img src={image} className ='thumbnail' ></img>
+              </div>
+            </li>
           })}
         </ul>
       </div>
