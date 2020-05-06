@@ -11,7 +11,6 @@ class Tags extends React.Component {
 
   render() {
     let tags = this.props.tagList
-    console.log(tags)
     return (
       <div>
         <ul className='tagList'>

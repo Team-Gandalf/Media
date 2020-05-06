@@ -29,11 +29,9 @@ class Summary extends React.Component {
     let dateString = months[month] + " " + date + ", " + year;
     let {details} = this.props;
 
-    console.log(this.state.hover)
-
     return (
       <div className='summary'>
-        <div className='splash'><img src={details.splash} alt='Game Splash'></img></div>
+        <div className='splash'><img src={details.splash} alt='Game Splash' height='151' width='324'></img></div>
         <p className='description'>{details.description}</p>
         {this.state.hover === true && (
           <span className='overlay'><p className='reviewStats'>{Math.ceil(Math.random() * 100)}% of the {details.reviews.total} user reviews for this game are negative.</p></span>
