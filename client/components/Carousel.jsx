@@ -8,10 +8,16 @@ class Carousel extends React.Component {
     this.state = {
       selected: '',
     };
+    this.clickHandler = this.clickHandler.bind(this)
   }
 
   componentDidMount() {
     this.setState({selected: this.props.media.images[0]})
+  }
+
+  clickHandler(target) {
+    this.setState({selected: target.image})
+    //console.log(target.image)
   }
 
   render() {
@@ -19,7 +25,7 @@ class Carousel extends React.Component {
 
     return (
       <div className='Carousel'>
-        <CarouselSlide selected={this.props.media.images[0]} />
+        <CarouselSlide selected={this.state.selected} />
         <ul className='slides'>
         {this.props.media.video.map((video) => {
             return <li >
@@ -31,7 +37,7 @@ class Carousel extends React.Component {
           {this.props.media.images.map((image) => {
             return <li>
               <div className='thumbnailContainer'>
-                <img src={image} className ='thumbnail' ></img>
+                <img src={image} className ='thumbnail' onClick={() => {this.clickHandler({image})}}></img>
               </div>
             </li>
           })}
