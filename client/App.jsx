@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Carousel from './components/Carousel.jsx'
 import Summary from './components/Summary.jsx'
 import axios from 'axios'
@@ -65,4 +64,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('m_app'))
+export default App;
