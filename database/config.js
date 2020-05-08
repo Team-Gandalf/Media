@@ -21,7 +21,7 @@ const gameSchema = new mongoose.Schema({
 		tags: [String],
 	},
 	media: {
-		video: [String],
+		video: [{video: String, thumbnail: String}],
   	images: [String],
 	},
 });

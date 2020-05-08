@@ -211,7 +211,7 @@ ul {
   z-index: 1;
   position: absolute;
   right: -10px;
-  top: 225px;
+  bottom: 167px;
   border: 1px black solid;
   border-radius: 3px;
   background-color: rgb(161, 162, 163);
@@ -241,6 +241,7 @@ ul {
   height: auto;
   max-width: 98%;
   margin: 4px;
+  cursor: pointer;
 }
 
 .currentView {

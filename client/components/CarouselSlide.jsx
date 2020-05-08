@@ -11,9 +11,16 @@ class CarouselSlide extends React.Component {
   }
 
   render() {
+    let item = this.props.selected;
+    console.log(item);
     return (
       <div className='CarouselSlide' >
-        <img src={this.props.selected} className='currentView' />
+         {item.video !== undefined && (
+        <video className='currentView' src={item.video.video} controls></video>
+      )}
+      {item.image !== undefined && (
+        <img src={item.image} className='currentView' />
+      )}
       </div>
     );
   }
