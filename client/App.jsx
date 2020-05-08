@@ -29,7 +29,7 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('/media', {
       params: {
-        _id: "5eb02a9f085eea158d76257f"
+        _id: '5eb49d7765f5cb8ae593fb70'
       }
     })
       .then((result) => {

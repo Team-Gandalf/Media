@@ -241,6 +241,7 @@ ul {
   height: auto;
   max-width: 98%;
   margin: 4px;
+  cursor: pointer;
 }
 
 .currentView {
