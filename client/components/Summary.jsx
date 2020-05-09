@@ -34,7 +34,7 @@ class Summary extends React.Component {
         <div className='splashContainer'><img src={details.splash} alt='Game Splash' className='splash' ></img></div>
         <p className='description'>{details.description}</p>
         {this.state.hover === true && (
-          <span className='overlay'><p className='reviewStats'>{Math.ceil(Math.random() * 100)}% of the {details.reviews.total} user reviews for this game are negative.</p></span>
+          <span className='overlay'><p className='reviewStats'>{details.percentage}% of the {details.reviews.total} user reviews for this game are negative.</p></span>
         )}
         <div className='grid3'>
           <span>
@@ -53,7 +53,7 @@ class Summary extends React.Component {
             <span><a className='blerb'>{details.publisher}</a></span>
         </div>
         <p className='tagHeader'>Popular user-defined tags for this product:</p>
-        <Tags tagList={details.tags}/>
+        <Tags tagList={details.tags} overlayHandler={this.props.overlayHandler}/>
       </div>
     );
   }

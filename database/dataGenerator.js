@@ -16,7 +16,7 @@ const seeder = () => {
     }
 
     const tagList = [];
-    for (let i = 0; i < Math.ceil(Math.random() * 10); i++) {
+    for (let i = 0; i < 20; i++) {
       tagList.push(faker.company.bsAdjective());
     }
 
@@ -35,6 +35,7 @@ const seeder = () => {
         developer: faker.company.companyName(),
         publisher: faker.company.companyName(),
         tags: tagList,
+        percentage: Math.ceil(Math.random() * 100),
       },
       media: {
         video: vids,

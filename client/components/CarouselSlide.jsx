@@ -12,7 +12,7 @@ class CarouselSlide extends React.Component {
 
   render() {
     let item = this.props.selected;
-    console.log(item);
+
     return (
       <div className='CarouselSlide' >
          {item.video !== undefined && (
