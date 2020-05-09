@@ -18,7 +18,8 @@ const gameSchema = new mongoose.Schema({
 		releaseDate: String,
 		developer: String,
 		publisher: String,
-		tags: [String],
+    tags: [String],
+    percentage: Number,
 	},
 	media: {
 		video: [{video: String, thumbnail: String}],

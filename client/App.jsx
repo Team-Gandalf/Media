@@ -2,6 +2,7 @@ import React from 'react';
 import Carousel from './components/Carousel.jsx'
 import Summary from './components/Summary.jsx'
 import axios from 'axios'
+import TagOverlay from './components/TagOverlay.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -22,14 +23,16 @@ class App extends React.Component {
           video: [],
           images: [],
         },
-      }
+      },
+      overlay: false,
     }
+    this.overlayHandler = this.overlayHandler.bind(this);
   }
 
   componentDidMount() {
     axios.get('/media', {
       params: {
-        _id: '5eb49d7765f5cb8ae593fb70'
+        _id: '5eb5e7d4b1b71db410273e72'
       }
     })
       .then((result) => {
@@ -37,6 +40,11 @@ class App extends React.Component {
           game: result.data[0]
         })
       })
+  }
+
+  overlayHandler() {
+    let change = !this.state.overlay
+    this.setState({overlay: change})
   }
 
   render() {
@@ -54,12 +62,15 @@ class App extends React.Component {
           <div className='highlights'>
             <div className='grid2'>
               <span><Carousel media={game.media}/></span>
-              <span><Summary details={game.summary}/></span>
+              <span><Summary details={game.summary} overlayHandler={this.overlayHandler}/></span>
             </div>
           </div>
           <span></span>
+          {this.state.overlay && (<TagOverlay tags={game.summary.tags}  overlayHandler={this.overlayHandler} />)}
         </div>
+        {/* <div className='space'> yo </div> */}
       </div>
+
     );
   }
 }
