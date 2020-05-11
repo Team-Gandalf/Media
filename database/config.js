@@ -10,6 +10,7 @@ db.once('open', () => {
 });
 
 const gameSchema = new mongoose.Schema({
+  proxyId: Number,
 	summary: {
 		title: String,
 		splash: String,
