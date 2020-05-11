@@ -42,7 +42,7 @@ module.exports.addNewGame = (game, cb) => {
 };
 
 module.exports.getGame = (game, cb) => {
-  Game.find({ _id: game._id }, (err, data) => {
+  Game.find({ proxyId: game.proxyId }, (err, data) => {
     if (err) {
       cb(err);
     } else {
