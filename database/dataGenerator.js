@@ -1,7 +1,7 @@
 const faker = require('faker');
 const db = require('./config');
 
-let counter = 0;
+let counter = 1;
 
 const options = ['Overwhelmingly Positive', 'Very Positive', 'Positive', 'Mostly Positive', 'Mixed', 'Mostly Negative', 'Negative', 'Very Negative', 'Overwhelmingly Negative'];
 
@@ -9,7 +9,7 @@ const vidOptions = [{video: 'https://assets.bonappetit.com/clips/5e908f11a19ab80
 
 
 const seeder = () => {
-  while (counter < 100) {
+  while (counter < 101) {
     const pics = [];
     for (let i = 0; i < Math.ceil(Math.random() * 10); i++) {
       pics.push(faker.image.image());
@@ -26,6 +26,7 @@ const seeder = () => {
     }
 
     const data = {
+      proxyId: counter,
       summary: {
         title: faker.commerce.productName(),
         splash: faker.image.abstract(),
@@ -46,7 +47,7 @@ const seeder = () => {
       if (err) {
         console.log(err);
       } else {
-        console.log(`successfully inserted ${counter + 1}`);
+        console.log(`successfully inserted ${counter}`);
       }
     });
     counter += 1;
