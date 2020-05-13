@@ -3,10 +3,10 @@ const parser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const db = require('../database/config.js')
+const db = require('../database/config.js');
 
-app.use(express.static(path.join(__dirname, '../public')));
 app.use(parser.json());
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/media', (req, res) => {
   const game = req.query;
