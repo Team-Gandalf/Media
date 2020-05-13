@@ -1,5 +1,7 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class Tags extends React.Component {
   constructor(props) {
@@ -10,21 +12,18 @@ class Tags extends React.Component {
 
 
   render() {
-    let tags = this.props.tagList;
-    let tagHighlights = tags.slice(0, 3)
-    console.log(this.props)
+    const tags = this.props.tagList;
+    const tagHighlights = tags.slice(0, 3);
 
     return (
       <div>
-        <ul className='tagList'>
-          {tagHighlights.map((tag) => {
-            return <li className='listItem'><button className='tag'>{tag}</button></li>
-          })}
-          <li className='listItem'><button className='tag' onClick={() => {this.props.overlayHandler()}}> + </button></li>
+        <ul className="tagList">
+          {tagHighlights.map((tag, index) => <li key={index} className="listItem"><button className="tag" type="button">{tag}</button></li>)}
+          <li className="listItem"><button className="tag" onClick={() => { this.props.overlayHandler(); }} type="button"> + </button></li>
         </ul>
       </div>
     );
   }
 }
 
-export default Tags
+export default Tags;

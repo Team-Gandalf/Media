@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/media-has-caption */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class CarouselSlide extends React.Component {
   constructor(props) {
@@ -7,23 +9,22 @@ class CarouselSlide extends React.Component {
     this.state = {
 
     };
-
   }
 
   render() {
-    let item = this.props.selected;
+    const item = this.props.selected;
 
     return (
-      <div className='CarouselSlide' >
-         {item.video !== undefined && (
-        <video className='currentView' src={item.video.video} controls></video>
-      )}
-      {item.image !== undefined && (
-        <img src={item.image} className='currentView' />
-      )}
+      <div className="CarouselSlide">
+        {item.video !== undefined && (
+        <video className="currentView" alt="Game trailer" src={item.video.video} controls />
+        )}
+        {item.image !== undefined && (
+        <img src={item.image} alt="Enlarged screenshot" className="currentView" />
+        )}
       </div>
     );
   }
 }
 
-export default CarouselSlide
+export default CarouselSlide;

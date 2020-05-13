@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const mongoose = require('mongoose');
 
 const db = mongoose.connection;
@@ -11,27 +12,28 @@ db.once('open', () => {
 
 const gameSchema = new mongoose.Schema({
   proxyId: Number,
-	summary: {
-		title: String,
-		splash: String,
-		description: String,
-		reviews: { general: String, total: Number },
-		releaseDate: String,
-		developer: String,
-		publisher: String,
+  summary: {
+    title: String,
+    splash: String,
+    description: String,
+    reviews: { general: String, total: Number },
+    releaseDate: String,
+    developer: String,
+    publisher: String,
     tags: [String],
     percentage: Number,
-	},
-	media: {
-		video: [{video: String, thumbnail: String}],
-  	images: [String],
-	},
+  },
+  media: {
+    video: [{ video: String, thumbnail: String }],
+    images: [String],
+  },
 });
 
 const Game = mongoose.model('Game', gameSchema);
 
 module.exports.addNewGame = (game, cb) => {
   const newGame = new Game(game);
+  // eslint-disable-next-line no-shadow
   newGame.save((err, newGame) => {
     if (err) {
       cb(err);

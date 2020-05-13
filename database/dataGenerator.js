@@ -1,3 +1,7 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-loop-func */
+/* eslint-disable no-console */
 const faker = require('faker');
 const db = require('./config');
 
@@ -5,23 +9,23 @@ let counter = 1;
 
 const options = ['Overwhelmingly Positive', 'Very Positive', 'Positive', 'Mostly Positive', 'Mixed', 'Mostly Negative', 'Negative', 'Very Negative', 'Overwhelmingly Negative'];
 
-const vidOptions = [{video: 'https://assets.bonappetit.com/clips/5e908f11a19ab80008f8f97e/720p/pass/BA_BAO_S06_Ep048_Basically_CinnamonDateSwirlBuns_01_WARM_OIL_BUTTERMILK_.mp4.mp4', thumbnail: faker.image.image()}, {video: 'https://assets.bonappetit.com/clips/5e7ccde8fc61e900083835d3/720p/pass/BA_BAO_S06_Ep046_Basically_StickyCardamomCarrotCake_01_PREP_PAN_.mp4.mp4', thumbnail: faker.image.image()}, {video: 'https://assets.bonappetit.com/clips/5e865fc91e6e3f000851ca11/720p/pass/BA_BAO_S06_Ep047_Basically_TrippleThreatOnioinGalette_01_DRY_MIX_BUTTER_.mp4.mp4', thumbnail: faker.image.image()}, {video: 'https://assets.bonappetit.com/clips/5e6a81965174050008cae91a/720p/pass/BA_BAO_S06_Ep039_Basically_SourCreamAndOnionBiscuits_03a_CUT_SCALLIONS_.mp4.mp4', thumbnail: faker.image.image()}, {video: 'https://assets.bonappetit.com/clips/5e74f540d906210008988be6/720p/pass/BA_BAO_S06_Ep045_Basically_TahiniBillionairesBars_01_PREP_PAN_.mp4.mp4', thumbnail: faker.image.image()}];
+const vidOptions = [{ video: 'https://assets.bonappetit.com/clips/5e908f11a19ab80008f8f97e/720p/pass/BA_BAO_S06_Ep048_Basically_CinnamonDateSwirlBuns_01_WARM_OIL_BUTTERMILK_.mp4.mp4', thumbnail: faker.image.image() }, { video: 'https://assets.bonappetit.com/clips/5e7ccde8fc61e900083835d3/720p/pass/BA_BAO_S06_Ep046_Basically_StickyCardamomCarrotCake_01_PREP_PAN_.mp4.mp4', thumbnail: faker.image.image() }, { video: 'https://assets.bonappetit.com/clips/5e865fc91e6e3f000851ca11/720p/pass/BA_BAO_S06_Ep047_Basically_TrippleThreatOnioinGalette_01_DRY_MIX_BUTTER_.mp4.mp4', thumbnail: faker.image.image() }, { video: 'https://assets.bonappetit.com/clips/5e6a81965174050008cae91a/720p/pass/BA_BAO_S06_Ep039_Basically_SourCreamAndOnionBiscuits_03a_CUT_SCALLIONS_.mp4.mp4', thumbnail: faker.image.image() }, { video: 'https://assets.bonappetit.com/clips/5e74f540d906210008988be6/720p/pass/BA_BAO_S06_Ep045_Basically_TahiniBillionairesBars_01_PREP_PAN_.mp4.mp4', thumbnail: faker.image.image() }];
 
 
 const seeder = () => {
   while (counter < 101) {
     const pics = [];
-    for (let i = 0; i < Math.ceil(Math.random() * 10); i++) {
+    for (let i = 0; i < Math.ceil(Math.random() * 10); i += 1) {
       pics.push(faker.image.image());
     }
 
     const tagList = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 20; i += 1) {
       tagList.push(faker.company.bsAdjective());
     }
 
     const vids = [];
-    for (let i = 0; i < Math.ceil(Math.random() * 3); i++) {
+    for (let i = 0; i < Math.ceil(Math.random() * 3); i += 1) {
       vids.push(vidOptions[Math.floor(Math.random() * 5)]);
     }
 
