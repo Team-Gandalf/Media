@@ -26,20 +26,20 @@ class Carousel extends React.Component {
     }
 
     return (
-      <div className="Carousel">
+      <div className="media-carousel">
         <CarouselSlide selected={this.state.selected} />
-        <ul className="slides">
+        <ul className="media-slides media-list">
           {this.props.media.video.map((video, index) => (
             <li key={index}>
-              <div className="thumbnailContainer">
-                <img src={video.thumbnail} className="thumbnail" alt="game trailer" onClick={() => { this.clickHandler({ video }); }} />
+              <div className="media-thumbnailContainer">
+                <img src={video.thumbnail} className="media-thumbnail" alt="game trailer" onClick={() => { this.clickHandler({ video }); }} />
               </div>
             </li>
           ))}
           {this.props.media.images.map((image, index) => (
             <li key={index}>
-              <div className="thumbnailContainer">
-                <img src={image} className="thumbnail" alt="screenshot of game" onClick={() => { this.clickHandler({ image }); }} />
+              <div className="media-thumbnailContainer">
+                <img src={image} className="media-thumbnail" alt="screenshot of game" onClick={() => { this.clickHandler({ image }); }} />
               </div>
             </li>
           ))}

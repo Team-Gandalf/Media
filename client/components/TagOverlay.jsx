@@ -27,32 +27,32 @@ class TagOverlay extends React.Component {
 
     return (
       <div>
-        <div className="shadow" />
+        <div className="tag-overlay-shadow" />
         <div className="tagOverlay">
           {this.state.hover && (<p className="overlayHover">These are tags applied to the product by the most users.  You can click a tag to find other products with that tag applied.  Or, you can hit the plus symbol for any existing tags to increase that tag`&apos;`s  popularity on this product</p>) }
-          <div className="tagHeader">
+          <div className="media-tagHeader">
             <div className="topColorBar" />
-            <h1 className="exit" onClick={() => { this.props.overlayHandler(); }}>X</h1>
+            <h1 className="tag-overlay-exit" onClick={() => { this.props.overlayHandler(); }}>X</h1>
             <h1 className="overlayHeader">VIEW AND EDIT TAGS FOR THIS PRODUCT</h1>
           </div>
           <div className="tagBody">
             <div className="tagGrid">
-              <div className="col1">
-                <p className="prompt">
+              <div className="tag-col1">
+                <p className="tag-prompt">
                   Popular user-defined tags for this product:
                   <span className="tagsInfo" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>(?)</span>
                 </p>
-                <ul>
-                  {tags.map((tag, index) => <li className="tagOverlayList" key={index}><button className="tag" type="button">{tag}</button></li>)}
+                <ul className="media-list">
+                  {tags.map((tag, index) => <li className="tagOverlayList" key={index}><button className="media-tag" type="button">{tag}</button></li>)}
                 </ul>
               </div>
-              <div className="col2">
-                <p className="prompt">Sign in</p>
-                <p className="overlayText">Sign in to add your own tags to this product.</p>
-                <button className="tag overlaySignin" type="button">Sign in</button>
+              <div className="tag-col2">
+                <p className="tag-prompt">Sign in</p>
+                <p className="tag-overlayText">Sign in to add your own tags to this product.</p>
+                <button className="media-tag overlaySignin" type="button">Sign in</button>
               </div>
             </div>
-            <button className="closeButton" onClick={() => { this.props.overlayHandler(); }} type="button">Close</button>
+            <button className="tag-overlay-closeButton" onClick={() => { this.props.overlayHandler(); }} type="button">Close</button>
           </div>
         </div>
       </div>
