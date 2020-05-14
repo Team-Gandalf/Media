@@ -56,29 +56,31 @@ class App extends React.Component {
     const { game } = this.state;
     const { title } = game.summary;
     return (
-      <div className="media">
-        <div className="titleArea">
-          <h3 className="filePath">
-            <a href="">All Games</a>
-            &nbsp;&gt;&nbsp;
-            <a href="">Action Games</a>
-            &nbsp;&gt;&nbsp;
-            <a href="">{title}</a>
-          </h3>
-          <h1 className="title">{title}</h1>
-          <button className="button" type="button">Community Hub</button>
-        </div>
-        <div className="grid1">
-          <span />
-          <div className="highlights">
-            <div className="grid2">
-              <span><Carousel media={game.media} /></span>
-              <span><Summary details={game.summary} overlayHandler={this.overlayHandler} /></span>
-            </div>
+      <div className="media-background">
+        <div className="media">
+          <div className="media-title">
+            <h3 className="media-filePath">
+              <a href="">All Games</a>
+              &nbsp;&gt;&nbsp;
+              <a href="">Action Games</a>
+              &nbsp;&gt;&nbsp;
+              <a href="">{title}</a>
+            </h3>
+            <h1 className="title">{title}</h1>
+            <button className="media-button" type="button">Community Hub</button>
           </div>
-          <span />
-          {this.state.overlay
-          && (<TagOverlay tags={game.summary.tags} overlayHandler={this.overlayHandler} />)}
+          <div className="media-grid1">
+            <span />
+            <div className="media-highlights">
+              <div className="media-grid2">
+                <span><Carousel media={game.media} /></span>
+                <span><Summary details={game.summary} overlayHandler={this.overlayHandler} /></span>
+              </div>
+            </div>
+            <span />
+            {this.state.overlay
+            && (<TagOverlay tags={game.summary.tags} overlayHandler={this.overlayHandler} />)}
+          </div>
         </div>
       </div>
 

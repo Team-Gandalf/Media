@@ -17,9 +17,9 @@ class Tags extends React.Component {
 
     return (
       <div>
-        <ul className="tagList">
-          {tagHighlights.map((tag, index) => <li key={index} className="listItem"><button className="tag" type="button">{tag}</button></li>)}
-          <li className="listItem"><button className="tag" onClick={() => { this.props.overlayHandler(); }} type="button"> + </button></li>
+        <ul className="tagList media-list">
+          {tagHighlights.map((tag, index) => <li key={index} className="media-listItem"><button className="media-summary-tag" type="button">{tag}</button></li>)}
+          <li className="media-listItem"><button className="media-summary-tag" onClick={() => { this.props.overlayHandler(); }} type="button"> + </button></li>
         </ul>
       </div>
     );
