@@ -6,7 +6,10 @@ import axios from 'axios';
 import Carousel from './components/Carousel.jsx';
 import Summary from './components/Summary.jsx';
 import TagOverlay from './components/TagOverlay.jsx';
-import { MediaBackground, MediaTitle, MediaFilepath, MediaFilepathLink, Button, Grid1, MediaHighlights, Grid2 } from './StyledComponents.jsx';
+import {
+  MediaBackground, MediaTitle, MediaFilepath,
+  MediaFilepathLink, Button, Grid1, MediaHighlights, Grid2,
+} from './StyledComponents.jsx';
 
 class App extends React.Component {
   constructor(props) {

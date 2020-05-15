@@ -58,5 +58,94 @@ export const Grid2 = style.div`
   grid-template-columns: 600px 324px;
   align-items: center;`;
 
+export const GameSummary = style.div`
+  position: relative;
+  margin-left: 15px;`;
+
+export const SplashContainer = style.div`
+  height: 151px;
+  width: 324px;
+  display: flex;`;
+
+export const SplashImage = style.img`
+  object-fit: cover;
+  height: auto;
+  max-width: 100%;`;
+
+export const Description = style.p`
+  max-height: 111px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 18px;
+  padding-right: 16px;
+  padding-bottom: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c6d4df;`;
+
+export const SummaryOverlay = style.span`
+  margin: 0px;
+  padding: 5px;
+  word-wrap: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: rgb(51, 51, 51);
+  z-index: 1;
+  position: absolute;
+  right: -10px;
+  bottom: 167px;
+  border: 1px black solid;
+  border-radius: 3px;
+  background-color: rgb(161, 162, 163);
+  box-shadow: 0.5px 0.5px 2px;
+  width: 310px;`;
+
+export const ReviewStats = style.p`
+  width: 300px;`;
+
+export const Grid3 = style.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;`;
+
+export const BlerbHeader = style.p`
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  padding-right: 10px;
+  color: #556772`;
+
+export const ReviewValue = style.span`
+  color: #66C0F4;
+  cursor: pointer;
+  font-size: 12px;`;
+
+export const ReviewCount = style.span`
+  color: #556772;`;
+
+export const TopPadding = style.span`
+  padding-top: 14px`;
+
+export const ReleaseDate = style.span`
+  font-size: 12px;
+  line-height: 16px;
+  color: #8f98a0;
+  padding-top: 12px;`;
+
+export const DevHeader = style.span`
+  padding-top: 10px;`;
+
+export const PubHeader = style.span`
+  padding-top: 4px;`;
+
+export const Blerb = style.a`
+  color: #66C0F4;
+  cursor: pointer;
+  font-size: 12px;
+  &:hover{color: white;}`;
+
+export const TagHeader = style.p`
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 19px;
+  font-size: 12px;
+  color: #556772;`;
 
 // export { MediaBackground, MediaTitle, MediaFilepath };
