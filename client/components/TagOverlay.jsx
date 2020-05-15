@@ -4,6 +4,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import {
+  Shadow, TagOverlayModal, TagHeader, ColorBar, OverlayExit, OverlayHeader, TagBody, TagOverlayText, OverlayGrid, TagCol1, TagCol2, TagList, TagPrompt, TagInfo, OverlayHover, OverlaySignin, CloseButton, OverlayTag, TagOverlayList,
+} from '../StyledComponents.jsx';
 
 class TagOverlay extends React.Component {
   constructor(props) {
@@ -27,34 +30,34 @@ class TagOverlay extends React.Component {
 
     return (
       <div>
-        <div className="tag-overlay-shadow" />
-        <div className="tagOverlay">
-          {this.state.hover && (<p className="overlayHover">These are tags applied to the product by the most users.  You can click a tag to find other products with that tag applied.  Or, you can hit the plus symbol for any existing tags to increase that tag`&apos;`s  popularity on this product</p>) }
-          <div className="media-tagHeader">
-            <div className="topColorBar" />
-            <h1 className="tag-overlay-exit" onClick={() => { this.props.overlayHandler(); }}>X</h1>
-            <h1 className="overlayHeader">VIEW AND EDIT TAGS FOR THIS PRODUCT</h1>
-          </div>
-          <div className="tagBody">
-            <div className="tagGrid">
-              <div className="tag-col1">
-                <p className="tag-prompt">
+        <Shadow />
+        <TagOverlayModal>
+          {this.state.hover && (<OverlayHover>These are tags applied to the product by the most users.  You can click a tag to find other products with that tag applied.  Or, you can hit the plus symbol for any existing tags to increase that tag`&apos;`s  popularity on this product</OverlayHover>) }
+          <TagHeader>
+            <ColorBar />
+            <OverlayExit onClick={() => { this.props.overlayHandler(); }}>X</OverlayExit>
+            <OverlayHeader>VIEW AND EDIT TAGS FOR THIS PRODUCT</OverlayHeader>
+          </TagHeader>
+          <TagBody>
+            <OverlayGrid>
+              <TagCol1>
+                <TagPrompt>
                   Popular user-defined tags for this product:
-                  <span className="tagsInfo" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>(?)</span>
-                </p>
-                <ul className="media-list">
-                  {tags.map((tag, index) => <li className="tagOverlayList" key={index}><button className="media-tag" type="button">{tag}</button></li>)}
-                </ul>
-              </div>
-              <div className="tag-col2">
-                <p className="tag-prompt">Sign in</p>
-                <p className="tag-overlayText">Sign in to add your own tags to this product.</p>
-                <button className="media-tag overlaySignin" type="button">Sign in</button>
-              </div>
-            </div>
-            <button className="tag-overlay-closeButton" onClick={() => { this.props.overlayHandler(); }} type="button">Close</button>
-          </div>
-        </div>
+                  <TagInfo onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>(?)</TagInfo>
+                </TagPrompt>
+                <TagList>
+                  {tags.map((tag, index) => <TagOverlayList key={index}><OverlayTag type="button">{tag}</OverlayTag></TagOverlayList>)}
+                </TagList>
+              </TagCol1>
+              <TagCol2>
+                <TagPrompt>Sign in</TagPrompt>
+                <TagOverlayText>Sign in to add your own tags to this product.</TagOverlayText>
+                <OverlaySignin type="button">Sign in</OverlaySignin>
+              </TagCol2>
+            </OverlayGrid>
+            <CloseButton onClick={() => { this.props.overlayHandler(); }} type="button">Close</CloseButton>
+          </TagBody>
+        </TagOverlayModal>
       </div>
     );
   }

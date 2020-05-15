@@ -2,6 +2,9 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import {
+  CarouselSelected, CurrentViewVideo, CurrentViewImage,
+} from '../StyledComponents.jsx';
 
 class CarouselSlide extends React.Component {
   constructor(props) {
@@ -15,14 +18,14 @@ class CarouselSlide extends React.Component {
     const item = this.props.selected;
 
     return (
-      <div className="media-CarouselSlide">
+      <CarouselSelected>
         {item.video !== undefined && (
-        <video className="media-currentView" alt="Game trailer" src={item.video.video} controls />
+        <CurrentViewVideo alt="Game trailer" src={item.video.video} controls />
         )}
         {item.image !== undefined && (
-        <img src={item.image} alt="Enlarged screenshot" className="media-currentView" />
+        <CurrentViewImage src={item.image} alt="Enlarged screenshot" />
         )}
-      </div>
+      </CarouselSelected>
     );
   }
 }
