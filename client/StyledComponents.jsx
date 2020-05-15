@@ -171,4 +171,24 @@ list-style-type: none;`;
 export const TagListItem = style.li`
   display: inline;`;
 
+export const CarouselSlides = style.ul`
+  overflow: scroll;
+  display: inline-flex;
+  width: 100%;
+  overflow-y: hidden;
+  list-style-type: none;`;
+
+export const ThumbnailContainer = style.div`
+  height: 65px;
+  width: 115px;
+  display: flex;`;
+
+export const Thumbnail = style.img`
+  display: inline;
+  object-fit: cover;
+  height: auto;
+  max-width: 98%;
+  margin: 4px;
+  cursor: pointer;`;
+
 // export { MediaBackground, MediaTitle, MediaFilepath };

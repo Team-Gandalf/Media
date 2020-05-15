@@ -5,6 +5,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import CarouselSlide from './CarouselSlide.jsx';
+import {
+  CarouselSlides, ThumbnailContainer, Thumbnail,
+} from '../StyledComponents.jsx';
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -26,24 +29,24 @@ class Carousel extends React.Component {
     }
 
     return (
-      <div className="media-carousel">
+      <div>
         <CarouselSlide selected={this.state.selected} />
-        <ul className="media-slides media-list">
+        <CarouselSlides>
           {this.props.media.video.map((video, index) => (
             <li key={index}>
-              <div className="media-thumbnailContainer">
-                <img src={video.thumbnail} className="media-thumbnail" alt="game trailer" onClick={() => { this.clickHandler({ video }); }} />
-              </div>
+              <ThumbnailContainer>
+                <Thumbnail src={video.thumbnail} alt="game trailer" onClick={() => { this.clickHandler({ video }); }} />
+              </ThumbnailContainer>
             </li>
           ))}
           {this.props.media.images.map((image, index) => (
             <li key={index}>
-              <div className="media-thumbnailContainer">
-                <img src={image} className="media-thumbnail" alt="screenshot of game" onClick={() => { this.clickHandler({ image }); }} />
-              </div>
+              <ThumbnailContainer>
+                <Thumbnail src={image} alt="screenshot of game" onClick={() => { this.clickHandler({ image }); }} />
+              </ThumbnailContainer>
             </li>
           ))}
-        </ul>
+        </CarouselSlides>
       </div>
     );
   }
