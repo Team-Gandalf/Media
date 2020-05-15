@@ -6,6 +6,7 @@ import axios from 'axios';
 import Carousel from './components/Carousel.jsx';
 import Summary from './components/Summary.jsx';
 import TagOverlay from './components/TagOverlay.jsx';
+import { MediaBackground, MediaTitle, MediaFilepath, MediaFilepathLink, Button, Grid1, MediaHighlights, Grid2 } from './StyledComponents.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -56,33 +57,31 @@ class App extends React.Component {
     const { game } = this.state;
     const { title } = game.summary;
     return (
-      <div className="media-background">
-        <div className="media">
-          <div className="media-title">
-            <h3 className="media-filePath">
-              <a href="">All Games</a>
-              &nbsp;&gt;&nbsp;
-              <a href="">Action Games</a>
-              &nbsp;&gt;&nbsp;
-              <a href="">{title}</a>
-            </h3>
-            <h1 className="title">{title}</h1>
-            <button className="media-button" type="button">Community Hub</button>
-          </div>
-          <div className="media-grid1">
-            <span />
-            <div className="media-highlights">
-              <div className="media-grid2">
-                <span><Carousel media={game.media} /></span>
-                <span><Summary details={game.summary} overlayHandler={this.overlayHandler} /></span>
-              </div>
-            </div>
-            <span />
-            {this.state.overlay
-            && (<TagOverlay tags={game.summary.tags} overlayHandler={this.overlayHandler} />)}
-          </div>
-        </div>
-      </div>
+      <MediaBackground>
+        <MediaTitle>
+          <MediaFilepath>
+            <MediaFilepathLink href="">All Games</MediaFilepathLink>
+            &nbsp;&gt;&nbsp;
+            <MediaFilepathLink href="">Action Games</MediaFilepathLink>
+            &nbsp;&gt;&nbsp;
+            <MediaFilepathLink href="">{title}</MediaFilepathLink>
+          </MediaFilepath>
+          <h1 className="title">{title}</h1>
+          <Button type="button">Community Hub</Button>
+        </MediaTitle>
+        <Grid1>
+          <span />
+          <MediaHighlights>
+            <Grid2>
+              <span><Carousel media={game.media} /></span>
+              <span><Summary details={game.summary} overlayHandler={this.overlayHandler} /></span>
+            </Grid2>
+          </MediaHighlights>
+          <span />
+          {this.state.overlay
+          && (<TagOverlay tags={game.summary.tags} overlayHandler={this.overlayHandler} />)}
+        </Grid1>
+      </MediaBackground>
 
     );
   }
