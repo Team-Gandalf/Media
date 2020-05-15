@@ -148,4 +148,27 @@ export const TagHeader = style.p`
   font-size: 12px;
   color: #556772;`;
 
+export const SummaryTag = style.button`
+  border-radius: 2px;
+  display: inline;
+  background-color: #31496d;
+  color: #67c1f5;
+  margin-right: 2px;
+  margin-bottom: 7px;
+  font-size: 11px;
+  line-height: 19px;
+  padding: 0 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &:hover{color: white;
+    background-image: linear-gradient(to right, #67c1f5, #4a6997);}`;
+
+export const TagList = style.ul`
+list-style-type: none;`;
+
+export const TagListItem = style.li`
+  display: inline;`;
+
 // export { MediaBackground, MediaTitle, MediaFilepath };

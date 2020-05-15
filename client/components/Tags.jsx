@@ -2,6 +2,9 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import {
+  SummaryTag, TagListItem, TagList,
+} from '../StyledComponents.jsx';
 
 class Tags extends React.Component {
   constructor(props) {
@@ -17,10 +20,10 @@ class Tags extends React.Component {
 
     return (
       <div>
-        <ul className="tagList media-list">
-          {tagHighlights.map((tag, index) => <li key={index} className="media-listItem"><button className="media-summary-tag" type="button">{tag}</button></li>)}
-          <li className="media-listItem"><button className="media-summary-tag" onClick={() => { this.props.overlayHandler(); }} type="button"> + </button></li>
-        </ul>
+        <TagList>
+          {tagHighlights.map((tag, index) => <TagListItem key={index}><SummaryTag type="button">{tag}</SummaryTag></TagListItem>)}
+          <TagListItem><SummaryTag onClick={() => { this.props.overlayHandler(); }} type="button"> + </SummaryTag></TagListItem>
+        </TagList>
       </div>
     );
   }
