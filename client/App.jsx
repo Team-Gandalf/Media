@@ -7,8 +7,8 @@ import Carousel from './components/Carousel.jsx';
 import Summary from './components/Summary.jsx';
 import TagOverlay from './components/TagOverlay.jsx';
 import {
-  MediaBackground, MediaTitle, MediaFilepath,
-  MediaFilepathLink, Button, Grid1, MediaHighlights, Grid2,
+  GlobalStyle, MediaBackground, MediaTitle, MediaFilepath,
+  MediaFilepathLink, Button, Grid1, MediaHighlights, Grid2, GameTitle,
 } from './StyledComponents.jsx';
 
 class App extends React.Component {
@@ -61,6 +61,9 @@ class App extends React.Component {
     const { title } = game.summary;
     return (
       <MediaBackground>
+        <>
+          <GlobalStyle />
+        </>
         <MediaTitle>
           <MediaFilepath>
             <MediaFilepathLink href="">All Games</MediaFilepathLink>
@@ -69,7 +72,7 @@ class App extends React.Component {
             &nbsp;&gt;&nbsp;
             <MediaFilepathLink href="">{title}</MediaFilepathLink>
           </MediaFilepath>
-          <h1 className="title">{title}</h1>
+          <GameTitle>{title}</GameTitle>
           <Button type="button">Community Hub</Button>
         </MediaTitle>
         <Grid1>
