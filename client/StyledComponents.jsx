@@ -191,4 +191,22 @@ export const Thumbnail = style.img`
   margin: 4px;
   cursor: pointer;`;
 
+export const CarouselSelected = style.div`
+  height: 337px;
+  width: 600px;
+  display: flex;`;
+
+export const CurrentViewVideo = style.video`
+  position: relative;
+  top: 0px;
+  object-fit: cover;
+  height: auto;
+  max-width: 100%;`;
+
+export const CurrentViewImage = style.img`
+  position: relative;
+  top: 0px;
+  object-fit: cover;
+  height: auto;
+  max-width: 100%;`;
 // export { MediaBackground, MediaTitle, MediaFilepath };
