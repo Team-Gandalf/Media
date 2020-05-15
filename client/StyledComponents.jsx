@@ -98,8 +98,8 @@ export const SplashImage = styled.img`
   max-width: 100%;`;
 
 export const Description = styled.p`
-  max-height: 111px;
-  overflow: hidden;
+  height: 75px;
+  overflow-y: scroll;
   font-size: 13px;
   line-height: 18px;
   padding-right: 16px;
