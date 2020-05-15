@@ -3,7 +3,11 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import Tags from './Tags.jsx';
-import { GameSummary, SplashContainer, SplashImage, Description, SummaryOverlay, ReviewStats, Grid3, BlerbHeader, ReviewValue, ReviewCount, TopPadding, ReleaseDate, DevHeader, PubHeader, Blerb, TagHeader } from '../StyledComponents.jsx';
+import {
+  GameSummary, SplashContainer, SplashImage, Description,
+  SummaryOverlay, ReviewStats, Grid3, BlerbHeader, ReviewValue, ReviewCount,
+  TopPadding, ReleaseDate, DevHeader, PubHeader, Blerb, TagHeader,
+} from '../StyledComponents.jsx';
 
 class Summary extends React.Component {
   constructor(props) {
