@@ -3,6 +3,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import Tags from './Tags.jsx';
+import { GameSummary, SplashContainer, SplashImage, Description, SummaryOverlay, ReviewStats, Grid3, BlerbHeader, ReviewValue, ReviewCount, TopPadding, ReleaseDate, DevHeader, PubHeader, Blerb, TagHeader } from '../StyledComponents.jsx';
 
 class Summary extends React.Component {
   constructor(props) {
@@ -31,46 +32,46 @@ class Summary extends React.Component {
     const { details } = this.props;
 
     return (
-      <div className="game-summary">
-        <div className="summary-splashContainer"><img src={details.splash} alt="Game Splash" className="media-splash" /></div>
-        <p className="summary-description">{details.description}</p>
+      <GameSummary>
+        <SplashContainer><SplashImage src={details.splash} alt="Game Splash" className="media-splash" /></SplashContainer>
+        <Description>{details.description}</Description>
         {this.state.hover === true && (
-          <span className="summary-review-overlay">
-            <p className="summary-reviewStats">
+          <SummaryOverlay>
+            <ReviewStats>
               {details.percentage}
               % of the&nbsp;
               {details.reviews.total}
               {' '}
               user reviews for this game are negative.
               {' '}
-            </p>
-          </span>
+            </ReviewStats>
+          </SummaryOverlay>
         )}
-        <div className="media-grid3">
+        <Grid3>
           <span>
-            <p className="media-header">
+            <BlerbHeader>
               ALL REVIEWS:
-            </p>
+            </BlerbHeader>
           </span>
-          <span className="media-reviewValue" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
+          <ReviewValue onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
             {details.reviews.general}
-            <span className="media-reviewCount">
+            <ReviewCount>
               {' '}
               (
               {details.reviews.total}
               )
-            </span>
-          </span>
-          <span className="summaryTopPad"><p className="media-header">RELEASE DATE: </p></span>
-          <span className="media-releaseDate">{dateString}</span>
-          <span className="summaryTopPad"><p className="media-header">DEVELOPER: </p></span>
-          <span className="media-devCol"><a className="media-blerb">{details.developer}</a></span>
-          <span className="media-publisherCol"><p className="media-header">PUBLISHER: </p></span>
-          <span><a className="media-blerb">{details.publisher}</a></span>
-        </div>
-        <p className="media-tagHeader">Popular user-defined tags for this product:</p>
+            </ReviewCount>
+          </ReviewValue>
+          <TopPadding><BlerbHeader>RELEASE DATE: </BlerbHeader></TopPadding>
+          <ReleaseDate>{dateString}</ReleaseDate>
+          <TopPadding><BlerbHeader>DEVELOPER: </BlerbHeader></TopPadding>
+          <DevHeader><Blerb>{details.developer}</Blerb></DevHeader>
+          <PubHeader><BlerbHeader>PUBLISHER: </BlerbHeader></PubHeader>
+          <span><Blerb>{details.publisher}</Blerb></span>
+        </Grid3>
+        <TagHeader>Popular user-defined tags for this product:</TagHeader>
         <Tags tagList={details.tags} overlayHandler={this.props.overlayHandler} />
-      </div>
+      </GameSummary>
     );
   }
 }
