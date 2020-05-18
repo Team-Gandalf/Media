@@ -42,6 +42,7 @@ export const MediaTitle = styled.div`
   padding-top: 1rem;
   width: 940px;
   margin: 0 auto;
+  margin-top: 104px;
   padding-bottom: 16px;`;
 
 export const MediaFilepath = styled.div`
@@ -99,6 +100,7 @@ export const SplashImage = styled.img`
   max-width: 100%;`;
 
 export const Description = styled.p`
+  margin-top: 1rem;
   height: 75px;
   overflow-y: scroll;
   font-size: 13px;
@@ -424,6 +426,9 @@ export const Scroll = styled.input`
   }`;
 
 export const NavHeader = styled.div`
+position: absolute;
+top: 0px;
+left: 0px;
 height: 104px;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
