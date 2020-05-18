@@ -39,6 +39,7 @@ export const GameTitle = styled.h1`
   padding: 0;`;
 
 export const MediaTitle = styled.div`
+  padding-top: 1rem;
   width: 940px;
   margin: 0 auto;
   padding-bottom: 16px;`;
@@ -421,4 +422,74 @@ export const Scroll = styled.input`
   &::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #3d6c8d, #2e5470)
   }`;
+
+export const NavHeader = styled.div`
+height: 104px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+background-color: rgb(23, 26, 33);
+}`;
+
+export const NavList = styled.ul`
+  display: inline;
+  list-style-type: none;`;
+
+export const NavItem = styled.li`
+  position: relative;
+  padding-top: 45px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-bottom: 7px;
+  line-height: 16px;
+  float: left;
+  font-size: 14px;
+  color: rgb(184, 182, 180);
+  cursor: pointer;
+  &:hover{color: white}`;
+
+export const DlButton = styled.button`
+  height: 24px;
+  width: 110px;
+  font-size: 10px;
+  border: none;
+  background-color: #5c7e10;
+  background-image: url(https://steamstore-a.akamaihd.net/public/shared/images/header/btn_header_installsteam_download.png?v=1);
+  background-position: 10px 5px;
+  background-repeat: no-repeat no-repeat;
+  color: #e5e4dc;
+  display: inline-block;
+  margin-top: 3px;
+  padding: 0 9px 0 35px;
+  cursor: pointer;
+  &:hover{color: white};`;
+
+export const LogoContainer = styled.span`
+  margin-top: 25px;
+  float: left;
+  width: 176px;
+  height: 44px;
+  display: inline;`;
+
+export const NavContent = styled.span`
+  width: 940px;`;
+
+export const MainLogo = styled.img`
+  display: inline;
+  object-fit: cover;
+  height: auto;
+  max-width: 98%;
+  margin: 4px;
+  cursor: pointer;`;
+
+export const NavLogin = styled.span`
+  color: #b8b6b4;
+  padding: 0 4px;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover{color: white};`;
+
+export const NavFunction = styled.span`
+  font-size: 10px;
+  float: right;
+  margin-top: 5px;`;
 // export { MediaBackground, MediaTitle, MediaFilepath };
