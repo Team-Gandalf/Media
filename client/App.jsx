@@ -6,6 +6,7 @@ import axios from 'axios';
 import Carousel from './components/Carousel.jsx';
 import Summary from './components/Summary.jsx';
 import TagOverlay from './components/TagOverlay.jsx';
+import Navbar from './components/Navbar.jsx';
 import {
   GlobalStyle, MediaBackground, MediaTitle, MediaFilepath,
   MediaFilepathLink, Button, Grid1, MediaHighlights, Grid2, GameTitle,
@@ -64,6 +65,7 @@ class App extends React.Component {
         <>
           <GlobalStyle />
         </>
+        <Navbar />
         <MediaTitle>
           <MediaFilepath>
             <MediaFilepathLink href="">All Games</MediaFilepathLink>
